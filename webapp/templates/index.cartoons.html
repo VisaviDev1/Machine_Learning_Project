@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Мультфильмы - Keenon</title>
+		<link rel="stylesheet" href="/static/style.cartoons.css">
+		<link rel="icon" href="/media/forapp/icon.png" type="image/png" sizes="64x64">
+		<script src="https://unpkg.com/vue@3.2.29/dist/vue.global.js"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		<script src="https://unpkg.com/vue-star-rating@next/dist/VueStarRating.umd.min.js"></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<header class="head-panel">
+				<a href="/home" class="brand">Keenon</a>
+				<div class="links-bar">
+					<ul class="links">
+						<li><a href="/movies">Фильмы</a></li>
+						<li><a href="/cartoons">Мультфильмы</a></li>
+						<li><a href="/series">Сериалы</a></li>
+						<li><a href="#">Мои фильмы</a></li>
+					</ul>
+				</div>
+				<div class="search-field"><input type="text" class="search" placeholder="Поиск..."><a href="#" class="search-but"><img src="/media/forapp/search.png" width="23" height="25"></a></div>
+				<a href="/login" class="sigin">Войти</a>
+			</header>
+			<main class="main-panel">
+				<section class="field">
+					<div class="film-br"><p class="name-items">Моя подборка</p><p class="dis">Мультфильмы подобранные индивидуально для вас</p></div>
+					<div class="film-bar">
+						<div class="scroll">
+							{% for movie in movies %}
+							    <div class="item">
+							        <a href="/{{ movie.url }}"><img src="{{ movie.poster.url }}">
+							        <p>{{ movie.title }}</p></a>
+							    </div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="film-br"><p class="name-items">Новинки</p><p class="dis">Мультфильмы вышедшие совсем недавно</p></div>
+					<div class="film-bar">
+						<div class="scroll">
+							{% for movie in movies %}
+							    <div class="item">
+							        <a href="/{{ movie.url }}"><img src="{{ movie.poster.url }}">
+							        <p>{{ movie.title }}</p></a>
+							    </div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="film-br"><p class="name-items">Популярное</p><p class="dis">Мультфильмы наиболее полулярные сейчас</p></div>
+					<div class="film-bar">
+						<div class="scroll">
+							{% for movie in movies %}
+							    <div class="item">
+							        <a href="/{{ movie.url }}"><img src="{{ movie.poster.url }}">
+							        <p>{{ movie.title }}</p></a>
+							    </div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="film-br"><p class="name-items">Семейные</p><p class="dis">Мультфильмы которые подойдут для семейного просмотра</p></div>
+					<div class="film-bar">
+						<div class="scroll">
+							{% for movie in movies %}
+							    <div class="item">
+							        <a href="/{{ movie.url }}"><img src="{{ movie.poster.url }}">
+							        <p>{{ movie.title }}</p></a>
+							    </div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="film-br"><p class="name-items">Рейтинговые</p><p class="dis">Мультфильмы получившие высокую оценку на IMDb</p></div>
+					<div class="film-bar">
+						<div class="scroll">
+							{% for movie in movies %}
+							    <div class="item">
+							        <a href="/{{ movie.url }}"><img src="{{ movie.poster.url }}">
+							        <p>{{ movie.title }}</p></a>
+							    </div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				<footer>
+					<p>© 2021 — 2022 Keenon</p>
+				</footer>
+			</main>
+		</div>
+		<script src="/static/script.cartoons.js"></script>
+	</body>
+</html> 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>{{ movie.title }} - Keenon</title>
+		<link rel="stylesheet" href="/static/style.description.css">
+		<link rel="icon" href="/media/forapp/icon.png" type="image/png" sizes="64x64">
+		<script src="https://unpkg.com/vue@3.2.29/dist/vue.global.js"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		<script src="https://unpkg.com/vue-star-rating@next/dist/VueStarRating.umd.min.js"></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<header class="head-panel">
+				<a href="/home" class="brand">Keenon</a>
+				<div class="links-bar">
+					<ul class="links">
+						<li><a href="/movies">Фильмы</a></li>
+						<li><a href="/cartoons">Мультфильмы</a></li>
+						<li><a href="/series">Сериалы</a></li>
+						<li><a href="#">Мои фильмы</a></li>
+					</ul>
+				</div>
+				<div class="search-field"><input type="text" class="search" placeholder="Поиск..."><a href="#" class="search-but"><img src="/media/forapp/search.png" width="23" height="25"></a></div>
+				<a href="/login" class="sigin">Войти</a>
+			</header>
+			<main class="main-panel">
+				<section class="field">
+					<section class="main-field">
+						<div class="poster-field"><div class="poster-main"><div class="poster-img"><img src="{{ movie.poster.url }}" width="300" height="450" class="poster"></div><div class="poster-age"><img src="/media/forapp/{{ movie.age }}age.png"></div></div></div>
+						<div class="inf-field">
+							<h1 class="title-film">{{ movie.title }}</h1>
+							<div class="facts">
+							    <span class="certification">{{ movie.rating }}</span>
+							    <span class="runtime">&nbsp&nbsp {{ movie.hours }}h {{ movie.minutes }}m</span>
+							    <span class="imdb">&nbsp&nbsp&nbsp<img src="/media/forapp/imdb.png" width="34" height="17"> {{ movie.ratingimdb }}/100</span>
+							</div>
+							<div class="inf"><p style="color: #A45EE5;">Год</p></div><div class="inf-col"><p>{{ movie.year }}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Страна</p></div><div class="inf-col"><p>{{ movie.country }}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Жанр</p></div><div class="inf-col"><p>{% for genre in movie.genres.all %}{{ genre.name }}&nbsp{% endfor %}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Слоган</p></div><div class="inf-col"><p>"{{ movie.tagline }}"</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Режиссер</p></div><div class="inf-col"><p>{% for director in movie.directors.all %}{{ director.name }}&nbsp&nbsp{% endfor %}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Сценарий</p></div><div class="inf-col"><p>{% for screenwriter in movie.screenwriters.all %}{{ screenwriter.name }}&nbsp&nbsp{% endfor %}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Продюсер</p></div><div class="inf-col"><p>{% for producers in movie.producer.all %}{{ producers.name }}&nbsp&nbsp{% endfor %}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Актёры</p></div><div class="inf-col"><p>{% for actor in movie.actors.all %}{{ actor.name }}&nbsp&nbsp{% endfor %}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Бюджет</p></div><div class="inf-col"><p>${{ movie.budget }}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Сборы в мире</p></div><div class="inf-col"><p>${{ movie.fees }}</p></div>
+							<div class="inf"><p style="color: #A45EE5;">Категория</p></div><div class="inf-col"><p>{{ movie.category }}</p></div>
+						</div>
+					</section>
+					<section class="desc-field">
+						<div class="description-field">
+							<h2>Описание</h2>
+							<p align='justify' style="text-indent: 30px;">{{ movie.discription }}</p>
+						</div>
+					</section>
+					<div class="rating">
+						<star-rating v-bind:increment="1" v-bind:max-rating="5" inactive-color="#505050" active-color="#FCEC00" v-bind:animate="true" v-bind:star-size="140"></star-rating>
+					</div>
+				</section>
+				<footer>
+					<p>© 2021 — 2022 Keenon</p>
+				</footer>
+			</main>
+		</div>
+		<script src="/static/script.description.js"></script>
+	</body>
+</html> 

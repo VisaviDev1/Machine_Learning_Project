@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Регистрация - Keenon</title>
+		<link rel="stylesheet" href="/static/style.reg.css">
+		<link rel="icon" href="/media/forapp/icon.png" type="image/png" sizes="64x64">
+		<script src="https://unpkg.com/vue@3.2.29/dist/vue.global.js"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<div class="window-login">
+				<div class="loginandsigin">
+					<button v-bind:class="check ? 'button-login-active' : 'button-login'" v-on:click="check=!check">Регистрация</button>
+					<button v-bind:class="check ? 'button-login' : 'button-login-active'" v-on:click="check=!check">Вход</button>
+				</div>
+				<form class="input-form">
+					<input v-bind:class="check ? 'input-data' : 'input-dataoff'" placeholder="Электронная почта" type="email" name="email" id="email" onkeydown="checkEmail()">
+					<input class="input-data" placeholder="Логин" type="text">
+					<input class="input-data" placeholder="Пароль" type="password">
+					<input v-bind:class="check ? 'input-data' : 'input-dataoff'" placeholder="Повторите пароль" type="password">
+					<a v-bind:class="check ? 'input-dataoff' : 'forgot-data'">Забыли пароль?</a>
+				</form>
+				<button class="button-form"><span v-html="check ? siginbutton : loginbutton"></span></button>
+			</div>
+		</div>
+		<script src="/static/script.reg.js"></script>
+	</body>
+</html> 

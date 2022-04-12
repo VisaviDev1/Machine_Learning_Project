@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&family=League+Spartan&display=swap');
+
+
+body {
+    font-family: 'Montserrat', 'Roboto', 'League Spartan', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+    color: white;
+    background: #424242;
+    margin: 0;
+    overflow: hidden;
+}
+
+a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    font-size: 18px;
+}
+
+body, html {
+    position: relative;
+    height: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main-container {
+    height: inherit;
+    width: inherit;
+}
+
+.head-panel {
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    box-sizing: border-box;
+    background: #424242;
+
+}
+
+.brand {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+    height: inherit;
+    padding: 20px;
+    font-size: 136px;
+    color: #A45EE5;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sigin {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+    height: inherit;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 0px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    background: #424242;
+}
+
+.sigin:hover {
+    color: #A45EE5;
+    background: #505050;
+}
+
+.main-panel {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100hv;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.field {
+    padding-top: 5rem;
+    width: 100%;
+    background: #424242;
+}
+
+.hole {
+    display: flex;
+    bottom: 0px;
+    margin-left: -300px;
+    position: relative;
+}
+
+.disc {
+    font-size: 32px;
+    position: relative;
+    white-space: nowrap;
+    font-family: 'Montserrat';
+}
+
+.hole img{
+    animation: spinhole 6s infinite linear;
+}
+
+@keyframes spinhole {
+    0%  {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }   
+}
+
+.begin {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: fixed;
+    height: 80px;
+    width: 480px;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    background: #A45EE5;
+}
+
+.begin:hover {
+    color: #A45EE5;
+    background: #505050;
+}
+
+.quote {
+    display: flex;
+    font-size: 22px;
+    position: relative;
+    color: #FFFFFF;
+    white-space: wrap;
+}
+
+.inf {
+    margin-right: 10px;
+}
+
+.quote-field {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 120px;
+    width: 720px;
+    padding-left: 5px;
+    border-top: 4px solid #A45EE5;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.quote::before{
+    content: "“";
+    font-family: 'League Spartan';
+    padding-right: 15px;
+    font-size: 84px;
+    color: #A45EE5;
+}
+
+
+.tit {
+    display: flex;
+    font-size: 22px;
+    position: relative;
+    color: #FFFFFF;
+    white-space: nowrap;
+    justify-content: right;
+    font-style: oblique;
+}

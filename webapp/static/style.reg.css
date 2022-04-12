@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap');
+
+body {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    background: #A45EE5;
+    margin: 0;
+}
+
+body, html {
+    position: relative;
+    height: 100%;
+}
+
+.main-container {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 720px){
+    .window-login {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 580px;
+        width: 450px;
+        background: #424242;
+    }
+}
+
+@media (max-width: 720px){
+    .window-login {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        background: #424242;
+    }
+}
+
+.loginandsigin {
+    margin-top: 60px;
+    height: 70px;
+}
+
+.button-login-active {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    background: #A45EE5;
+    border: 0;
+    height: 100%;
+    width: 180px;
+}
+
+.button-login {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    background: #424242;
+    border: 0;
+    height: 100%;
+    width: 180px;
+    transition: 0.4s;
+}
+
+.button-login:hover {
+    background: #505050;
+    color: #A45EE5;
+}
+
+.input-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    height: 240px;
+    width: 400px;
+}
+
+.button-form {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    background: #A45EE5;
+    border: 0;
+    height: 15%;
+    width: 360px;
+    transition: 0.4s;
+}
+
+.button-form:hover {
+    background: #505050;
+    color: #A45EE5;
+}
+
+.input-data {
+    width: 90%;
+    font-size: 16px;
+    border: 0;
+    padding: 12px 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Montserrat';
+    transition: 0.4s;
+}
+
+.input-data::placeholder {
+  color: #C9A0F0;
+}
+
+.input-data:hover {
+    border: 0.5rem solid #A45EE5;
+}
+
+.input-dataoff {
+    display: none;
+}
+
+.forgot-data {
+    font-family: 'Montserrat';
+    width: 90%;
+    padding: 12px 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.forgot-data:hover {
+    color: #A45EE5;
+}
